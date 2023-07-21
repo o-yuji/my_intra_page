@@ -1,0 +1,91 @@
+@mixin table-border {
+  border-collapse: collapse;
+  border: solid 1px #000;
+  border-color: #b8b8b8;
+  border-width: 2px;
+  height: 30px;
+}
+
+.infoFrame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  // margin-top: 30px;
+}
+
+table {
+  @include table-border;
+  width: 80%;
+  max-width: 1000px;
+}
+
+th {
+  @include table-border;
+  background-color: hsl(211, 40%, 58%);
+}
+
+tr {
+  .th-del-btn {
+    width: 50px;
+  }
+
+  &:nth-child(2n) {
+    background-color: #f0f0f0;
+  }
+
+  &:nth-child(2n+1) {
+    background-color: #e9e9e9;
+  }
+
+  &:hover {
+    background-color: hsl(0, 1%, 77%);
+    cursor: pointer;
+  }
+}
+
+td {
+  @include table-border;
+
+  &.td-index {
+    width: 60px;
+  }
+}
+
+.history-input-box {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  margin: 30px;
+
+  .history-input {
+    display: block;
+    height: 30px;
+    width: 80%;
+    padding: 0 6px;
+    font-size: 1.3rem;
+    border: solid 2px hsl(0, 0%, 48%);
+    border-radius: 6px;
+  }
+
+  .history-input-btn {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px hsl(0, 0%, 48%);
+    background-color: #b8b8b8;
+    height: 30px;
+    margin: 0 18px;
+    width: 100px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 3px 3px #b0b0b0;
+
+    &:hover {
+      box-shadow: none;
+      transform: translate(2px, 2px)
+    }
+  }
+}
